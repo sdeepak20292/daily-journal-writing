@@ -1,0 +1,38 @@
+<%- include("partials/header"); -%>
+<!-- <h1 class="intro">Home</h1>
+
+<div class="">
+  <p class="para1"><%=para1%></p>
+</div> -->
+
+<section id="homePage">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1 class="para1"><%=para1%></h1>
+      <h3 class="para2" >From scientific geniuses to thoughtful artists — and everyone in between — keeping a journal can be a beneficial self-care practice</h2>
+
+    </div>
+    <div class="col-lg-6">
+      <img class = "owl" src="owl.png" alt="">
+    </div>
+
+  </div>
+</section>
+
+<div class="container">
+
+<div class="daily-post">
+  <%posts.forEach(function(post){  %>
+    <b><h1 class="daily-post"><%=post.title%></h1></b>
+    <%if(post.post.length > 100){%>
+
+      <p><%=post.post.substring(0,100)+"............"%><a href="/post/<%=post.title%>">read more</a></p>
+    <%}else{%>
+      <p><%=post.post%></p>
+    <%}%>
+
+  <%}); %>
+
+</div>
+
+<%-  include("partials/footer"); -%>
